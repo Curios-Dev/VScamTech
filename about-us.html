@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #4a90e2;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        ul li {
+            padding: 0.5rem 1rem;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        a:hover {
+            color: #4a90e2;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            padding: 2rem;
+            margin: 2rem 0;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        p {
+            margin: 1rem 0;
+            color: #555;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .team-member {
+            width: 200px;
+            text-align: center;
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+        }
+        .team-member h3 {
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .team-member p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo">VTech</span>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ourpurpose.html">Our Purpose</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="our-achievements.html">Our Achievements</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>
+                We are a team of dedicated professionals committed to excellence. With years of experience in the industry, we bring expertise, passion, and a relentless drive to achieve the highest standards in everything we do.
+            </p>
+        </section>
+        <section>
+            <h2>Our Mission</h2>
+            <p>
+                Our mission is to deliver top-quality services and solutions that help our clients achieve their business goals. We strive to be the best in our industry, constantly evolving and improving our skills and methodologies.
+            </p>
+        </section>
+        <section>
+            <h2>Our Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="Images/leader.jpg" alt="Team Member 1">
+                    <h3>Torturer Supreme</h3>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="Images/teammembersloth.jpeg" alt="Team Member 2">
+                    <h3>Lazy Sloth</h3>
+                    <p>Lead Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="Images/teammember3t7a.jpeg.png" alt="Team Member 3">
+                    <h3>T7A</h3>
+                    <p>Project Manager</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Our History</h2>
+            <p>
+                Since our inception, we have grown from a small startup to a leading player in the industry. Our journey has been marked by numerous milestones, including successful projects, industry awards, and continuous innovation.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
