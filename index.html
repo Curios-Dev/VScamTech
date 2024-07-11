@@ -19,7 +19,15 @@
             padding: 1rem 2rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+        .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
             color: #fff;
@@ -129,7 +137,10 @@
 </head>
 <body>
     <nav>
-        <span class="logo">VScamTech</span>
+        <div class="logo-container">
+            <img src="logo.png" alt="VScamTech Logo">
+            <span class="logo-text">VScamTech</span>
+        </div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="ourpurpose.html">Our Purpose</a></li>
