@@ -12,6 +12,46 @@
             color: #333;
             line-height: 1.6;
         }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #4a90e2;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        ul li {
+            padding: 0.5rem 1rem;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        a:hover {
+            color: #4a90e2;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+        }
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -55,14 +95,45 @@
         .achievement-description {
             font-size: 0.9rem;
         }
-        .work{
+        .work {
             color: rgb(128, 153, 179);
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+            }
+            ul li {
+                padding: 0.5rem;
+                width: 100%;
+                text-align: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+            .achievement {
+                width: 100%;
+            }
+            .logo-container img {
+                max-width: 40px;
+            }
+            .logo-text {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
-         <div class="logo-container">
+        <div class="logo-container">
             <img src="logo.png" alt="VScamTech Logo">
             <span class="logo-text">VScamTech</span>
         </div>
