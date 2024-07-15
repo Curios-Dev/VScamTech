@@ -63,7 +63,7 @@
             color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeInDown 1.5s ease-in-out;
+            animation: fadeInDown 1.5s ease-in;
         }
         header h1 {
             font-size: 2.5rem;
@@ -93,14 +93,14 @@
             margin: 2rem 0;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             opacity: 0;
             transform: translateY(20px);
             will-change: opacity, transform;
-            animation: fadeInUp 4s ease-in-out forwards;
+            animation: fadeInUp 4s ease-in;
         }
         .fade-in-up {
-            animation: fadeInUp 4s ease-in-out forwards;
+            animation: fadeInUp 4s ease-in;
         }
         .services {
             display: flex;
@@ -166,16 +166,13 @@
             }
         }
         /* Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+        
         @keyframes fadeInDown {
-            0% {  transform: translateY(-40px); }
+            0% {  transform: translateY(-10px); }
             100% {  transform: translateY(0); }
         }
         @keyframes fadeInUp {
-            0% {  transform: translateY(40px); }
+            0% {  transform: translateY(10px); }
             100% {  transform: translateY(0); }
         }
     </style>
