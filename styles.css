@@ -237,16 +237,16 @@ p {
 }
 .colorchange{
     color: #4a90e2;
-    animation: change infinite 10s ease-in;
+    animation: change infinite 20s ease-in;
 }
 @keyframes change {
     0% { 
-        color: rgb(164, 212, 246);
+        color: rgb(112, 183, 233);
     }
     50% {
-         color: #0364d4; 
+         color: #2f2ac9; 
         }
      100% { 
-        color: rgb(164, 212, 246);
+        color: rgb(112, 183, 233);
     }
 }
