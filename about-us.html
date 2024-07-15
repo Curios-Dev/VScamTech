@@ -12,15 +12,15 @@
             box-sizing: border-box;
         }
         body {
-            background-color: #f4f4f9;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #b8d0db;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Professional font */
             line-height: 1.6;
         }
         nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #4a90e2;
+            background-color: #4a90e2; /* Blue navbar background */
             padding: 1rem 2rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -35,7 +35,7 @@
         .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #fff;
+            color: #fff; 
         }
         ul {
             list-style: none;
@@ -47,12 +47,12 @@
         }
         a {
             text-decoration: none;
-            color: #fff;
+            color: #fff; /* White links */
             transition: color 0.3s, background-color 0.3s;
         }
         a:hover {
-            color: #4a90e2;
-            background-color: #fff;
+            color: #357ebd; 
+            background-color: #fff; 
             border-radius: 5px;
             padding: 0.5rem 1rem;
         }
@@ -62,22 +62,45 @@
         section {
             padding: 2rem;
             margin: 2rem 0;
-            background-color: #fff;
+            background: linear-gradient(to bottom, #b8d0db, #a6d6ef); 
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 1;
+            transform: translateY(20px); 
+            will-change: opacity, transform;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        section:hover{
+            h2{
+                text-transform: uppercase;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            transform: translateY(1px);
+            background: linear-gradient(to top, #b8d0db, #b6dff4);
         }
+        .section-animated{
+            animation: infinite smooth 10s ease-in;
+        }
+        @keyframes smooth {
+            0% {
+                background: #b8d0db;
+            }
+            50% {
+                background: #b6dff4;
+            }
+            100%{
+                background: #b8d0db;
+            }
+
+        }
+        
         h2 {
             margin-bottom: 1rem;
-            color: #333;
+            color: #30a0c2; 
         }
         p {
             margin: 1rem 0;
-            color: #555;
+            color: #000000;
         }
         .team {
             display: flex;
@@ -88,6 +111,11 @@
         .team-member {
             width: 200px;
             text-align: center;
+            opacity:1;
+            transform: translateY(20px); /* Initial position for fade-in-up effect */
+            will-change: opacity, transform;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            margin-bottom: 2rem;
         }
         .team-member img {
             width: 150px;
@@ -103,7 +131,7 @@
         }
         .team-member p {
             font-size: 0.9rem;
-            color: #777;
+            color: #000000; /* Lighter text color */
         }
         /* Responsive Styles */
         @media (max-width: 768px) {
@@ -167,44 +195,64 @@
         </ul>
     </nav>
     <main>
-        <section>
-            <h2>About Us</h2>
+        <section class="section-animated">
+            <h2 class="colorchange">About Us</h2>
             <p>
                 We are a team of dedicated professionals committed to excellence. With years of experience in the industry, we bring expertise, passion, and a relentless drive to achieve the highest standards in everything we do.
             </p>
         </section>
-        <section>
-            <h2>Our Mission</h2>
+        <section class="section-animated">
+            <h2 class="colorchange">Our Mission</h2>
             <p>
                 Our mission is to deliver top-quality services and solutions that help our clients achieve their business goals. We strive to be the best in our industry, constantly evolving and improving our skills and methodologies.
             </p>
         </section>
-        <section>
-            <h2>Our Team</h2>
+        <section class="section-animated">
+            <h2 class="colorchange">Our Team</h2>
             <div class="team">
                 <div class="team-member">
                     <img src="https://www.bing.com/th?id=OIP.zZt911PRGIsWqnWXyM6IlwHaHa&w=155&h=200&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="Team Member 1">
-                    <h3>RAM DEV BABAA!</h3>
+                    <h3 class="colorchange">RAM DEV BABAA!</h3>
                     <p>CEO & Founder</p>
                 </div>
                 <div class="team-member">
                     <img src="teammembersloth.jpeg" alt="Team Member 2">
-                    <h3>Lazy Sloth</h3>
+                    <h3 class="colorchange">Lazy Sloth</h3>
                     <p>Lead Developer</p>
                 </div>
                 <div class="team-member">
                     <img src="https://m.media-amazon.com/images/S/amzn-author-media-prod/7i4p455hk67skr4ksvj1gmui05._SX450_.jpg" alt="Team Member 3">
-                    <h3>Ankur Warkioo</h3>
+                    <h3 class="colorchange">Ankur Warkioo</h3>
                     <p>Project Manager</p>
                 </div>
             </div>
         </section>
-        <section>
-            <h2>Our History</h2>
+        <section class="section-animated">
+            <h2 class="colorchange">Our History</h2>
             <p>
                 Since our inception, we have grown from a small startup to a leading player in the industry. Our journey has been marked by numerous milestones, including successful projects, industry awards, and continuous innovation.
             </p>
         </section>
     </main>
+    <script src="script.js"></script>
+    <script>
+        // JavaScript for scroll animations
+        const sections = document.querySelectorAll('.section-animated');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+
+            threshold: 0.5
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
