@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Purpose | Website</title>
+    <title>Our Purpose | VScamTech</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -18,6 +18,8 @@
             background-color: #4a90e2;
             padding: 1rem 2rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            will-change: opacity;
         }
         .logo-container {
             display: flex;
@@ -60,28 +62,39 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            will-change: opacity, transform;
+            animation: fadeInUp 1.5s ease-in-out forwards;
         }
         h2 {
-            margin-bottom: 1rem;
-            color: #333;
-            text-align: center;
+            color: #4a90e2;
+            animation: change infinite 10s ease-in;
         }
-        p {
-            margin: 1rem 0;
-            color: #555;
-            text-align: center;
+        @keyframes change {
+            0% { 
+                color: rgb(119, 140, 155);
+            }
+            100% {
+                 color: #2473ce; 
+            }
         }
-        .purpose-image {
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .image-row img {
             width: 100%;
-            height: 300px;
-            object-fit: contain;
+            max-width: 300px;
             border-radius: 10px;
-            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .image-row img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 40px 20px rgba(0, 0, 0, 0.3);
         }
         .goals {
             display: flex;
@@ -99,8 +112,8 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .goal:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
         }
         .goal h3 {
             margin-bottom: 0.5rem;
@@ -109,23 +122,28 @@
         .goal p {
             color: #555;
         }
-        .image-row {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
-        .image-row img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
-        .image-row img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .services {
+            animation: infinite smooth 10s ease-in;
+        }
+        @keyframes smooth {
+            0% {
+                background: #b8d0db;
+            }
+            50% {
+                background: #b6dff4;
+            }
+            100%{
+                background: #b8d0db;
+            }
         }
         /* Responsive Styles */
         @media (max-width: 768px) {
@@ -143,9 +161,6 @@
                 width: 100%;
                 text-align: center;
             }
-            .purpose-image {
-                height: 200px;
-            }
         }
         @media (max-width: 480px) {
             main {
@@ -159,6 +174,12 @@
             }
             .logo-text {
                 font-size: 1.5rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -178,45 +199,64 @@
         </ul>
     </nav>
     <main>
-        <section>
-            <h2>Our Purpose</h2>
+        <section class="fade-in-up" style="animation-delay: 0.3s;">
+            <h2 class="colorchange">Our Purpose</h2>
             <img src="logo.png" alt="Our Purpose" class="purpose-image">
             <p>
                 Our purpose is to create value for our clients through innovative solutions, fostering a culture of continuous improvement, and delivering exceptional results that exceed expectations.
             </p>
         </section>
-        <section>
-            <h2>Our Vision</h2>
+        <section class="fade-in-up" style="animation-delay: 0.6s;">
+            <h2 class="colorchange">Our Vision</h2>
             <div class="image-row">
-                <img src="Webdev.jpeg" alt="Image 1">
-                <img src="SEO.jpeg" alt="Image 2">
-                <img src="digitalmarketing.jpeg" alt="Image 3">
+                <img src="Webdev.jpeg" alt="Image 1" class="fade-in-up" style="animation-delay: 0.6s;">
+                <img src="SEO.jpeg" alt="Image 2" class="fade-in-up" style="animation-delay: 0.9s;">
+                <img src="digitalmarketing.jpeg" alt="Image 3" class="fade-in-up" style="animation-delay: 1.2s;">
             </div>
             <p>
                 We envision a future where our solutions lead the industry, setting new standards for excellence and innovation.
             </p>
         </section>
-        <section>
-            <h2>Our Goals</h2>
+        <section class="fade-in-up" style="animation-delay: 1.9s;">
+            <h2 class="colorchange">Our Goals</h2>
             <div class="goals">
-                <div class="goal">
-                    <h3>Innovative Solutions</h3>
+                <div class="goal fade-in-up" style="animation-delay: 2.2s;">
+                    <h3 class="colorchange">Innovative Solutions</h3>
                     <p>We focus on creating innovative solutions that address our clients' most pressing challenges.</p>
                 </div>
-                <div class="goal">
-                    <h3>Client Success</h3>
+                <div class="goal fade-in-up" style="animation-delay: 2.5s;">
+                    <h3 class="colorchange">Client Success</h3>
                     <p>Our primary goal is to ensure our clients achieve their business objectives through our dedicated support.</p>
                 </div>
-                <div class="goal">
-                    <h3>Continuous Improvement</h3>
+                <div class="goal fade-in-up" style="animation-delay: 2.8s;">
+                    <h3 class="colorchange">Continuous Improvement</h3>
                     <p>We are committed to continuous improvement, both in our methodologies and our team's skillsets.</p>
                 </div>
-                <div class="goal">
-                    <h3>Exceptional Results</h3>
+                <div class="goal fade-in-up" style="animation-delay: 3.1s;">
+                    <h3 class="colorchange">Exceptional Results</h3>
                     <p>We strive for excellence in every project, delivering results that surpass our clients' expectations.</p>
                 </div>
             </div>
         </section>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.fade-in-up');
+            const options = {
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
