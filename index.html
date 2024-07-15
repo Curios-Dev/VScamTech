@@ -6,12 +6,6 @@
     <title>Home | VScamTech</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
             background-color: #f4f4f9;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -24,6 +18,8 @@
             background-color: #4a90e2;
             padding: 1rem 2rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            will-change: opacity;
         }
         .logo-container {
             display: flex;
@@ -60,43 +56,51 @@
         main {
             padding: 2rem;
         }
+        header {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(to right, #4a90e2, #6ec1e4);
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1.5s ease-in-out;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #fff;
+            color: #4a90e2;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background-color: #4a90e2;
+            color: #fff;
+            transform: scale(1.2);
+        }
         section {
             padding: 2rem;
             margin: 2rem 0;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            will-change: opacity, transform;
+            animation: fadeInUp 4s ease-in-out forwards;
         }
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        h2 {
-            margin-bottom: 1rem;
-            color: #333;
-            text-align: center;
-        }
-        p {
-            margin: 1rem 0;
-            color: #555;
-            text-align: center;
-        }
-        .hero {
-            background-image: url(gradient.jpeg);
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-            border-radius: 10px;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin: 0;
+        .fade-in-up {
+            animation: fadeInUp 4s ease-in-out forwards;
         }
         .services {
             display: flex;
@@ -124,21 +128,6 @@
         .service p {
             color: #555;
         }
-        .cta {
-            text-align: center;
-            margin: 2rem 0;
-        }
-        .cta a {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: #4a90e2;
-            color: #fff;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .cta a:hover {
-            background-color: #357ABD;
-        }
         /* Responsive Styles */
         @media (max-width: 768px) {
             nav {
@@ -155,23 +144,13 @@
                 width: 100%;
                 text-align: center;
             }
-            .hero h1 {
-                font-size: 2rem;
+        }
+        @media (max-width: 480px) {
+            main {
+                padding: 1rem;
             }
             .service {
                 flex: 1 1 100%;
-            }
-        }
-        @media (max-width: 480px) {
-            .hero {
-                height: 300px;
-            }
-            .hero h1 {
-                font-size: 1.5rem;
-                padding: 0 1rem;
-            }
-            nav {
-                padding: 1rem;
             }
             .logo-container img {
                 max-width: 40px;
@@ -179,6 +158,25 @@
             .logo-text {
                 font-size: 1.5rem;
             }
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            0% {  transform: translateY(-40px); }
+            100% {  transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            0% {  transform: translateY(40px); }
+            100% {  transform: translateY(0); }
         }
     </style>
 </head>
@@ -197,39 +195,33 @@
         </ul>
     </nav>
     <main>
-        <section class="hero">
-            <h1>Welcome to VScamTech!</h1>
-        </section>
-        <section>
-            <h2>Innovate.Excel.Deliver.</h2>
-            <p>
-                We offer a range of services and solutions to meet your needs. Explore our website to learn more about what we do and how we can help you.
-            </p>
-        </section>
-        <section>
-            <h2>Our Services</h2>
+        <header class="fade-in-up">
+            <h1 class="colorchange">Welcome to VScamTech</h1>
+            <p><b>Innovative Solutions for a Digital World!</b></p>
+            <a href="contact-us.html" class="btn">Get in Touch</a>
+        </header>
+        <div class="fade-in-up" id="services">
+            <h2 class="colorchange">Our Services</h2>
             <div class="services">
                 <div class="service">
-                    <h3>Web Development</h3>
-                    <p>We create stunning and responsive websites that cater to your business needs.</p>
+                    <h3 class="colorchange">Web Development</h3>
+                    <p>Building responsive and modern websites tailored to your needs.</p>
                 </div>
                 <div class="service">
-                    <h3>SEO Optimization</h3>
-                    <p>Improve your website's visibility on search engines with our expert SEO services.</p>
+                    <h3 class="colorchange">SEO Optimization</h3>
+                    <p>Improving your website's visibility on search engines.</p>
                 </div>
                 <div class="service">
-                    <h3>Digital Marketing</h3>
-                    <p>Expand your online presence and reach your target audience through effective digital marketing strategies.</p>
+                    <h3 class="colorchange">Digital Marketing</h3>
+                    <p>Creating effective digital marketing strategies to boost your business.</p>
+                </div>
+                <div class="service">
+                    <h3 class="colorchange">Consulting</h3>
+                    <p>Providing expert advice to help your business grow.</p>
                 </div>
             </div>
-        </section>
-        <section class="cta">
-            <h2>Get Started Today</h2>
-            <p>
-                Ready to take your business to the next level? Contact us today to discuss your project!
-            </p>
-            <a href="contact-us.html">Contact Us</a>
-        </section>
+        </div>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
